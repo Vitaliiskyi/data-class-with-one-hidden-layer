@@ -5,7 +5,7 @@ import sklearn.datasets
 import sklearn.linear_model
 
 def plot_decision_boundary(model, X, y):
-    # Set min and max values and give it some padding
+    # # Set min and max values and give it some padding
     x_min, x_max = X[0, :].min() - 1, X[0, :].max() + 1
     y_min, y_max = X[1, :].min() - 1, X[1, :].max() + 1
     h = 0.01
@@ -35,13 +35,14 @@ def sigmoid(x):
     return s
 
 def load_planar_dataset():
-    np.random.seed(1)
+    
+    np.random.seed(10)
     m = 400 # number of examples
-    N = int(m/2) # number of points per class
+    N = int(m/2 ) # number of points per class
     D = 2 # dimensionality
     X = np.zeros((m,D)) # data matrix where each row is a single example
     Y = np.zeros((m,1), dtype='uint8') # labels vector (0 for red, 1 for blue)
-    a = 4 # maximum ray of the flower
+    a = 40 # maximum ray of the flower
 
     for j in range(2):
         ix = range(N*j,N*(j+1))
